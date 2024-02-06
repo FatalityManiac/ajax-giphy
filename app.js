@@ -1,8 +1,6 @@
 const $gifArea = $("#gif-area");
 const $searchInput = $("#search");
 
-/* use ajax result to add a gif */
-
 function addGif(res) {
   let numResults = res.data.length;
   if (numResults) {
@@ -16,8 +14,6 @@ function addGif(res) {
     $gifArea.append($newCol);
   }
 }
-
-/* handle form submission: clear search box & make ajax call */
 
 $("form").on("submit", async function(evt) {
   evt.preventDefault();
@@ -33,8 +29,6 @@ $("form").on("submit", async function(evt) {
   });
   addGif(response.data);
 });
-
-/* remove gif */
 
 $("#remove").on("click", function() {
   $gifArea.empty();
